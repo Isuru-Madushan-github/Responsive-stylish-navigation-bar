@@ -1,0 +1,275 @@
+:root{
+    --back-color:#252322;
+    --use-font-color:white;
+    --side-nav-border:1.5px solid rgba(51, 48, 48,0.5);
+    --side-nav-fcolor:rgb(80, 76, 76);
+    --hover-effect-color:rgba(255, 255, 255, 0.8);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.container-wrapper{
+    overflow: hidden;
+    width: 100%;
+}
+
+/*--------------styling the header part--------------*/
+
+.container-wrapper header nav .nav-container{
+    background: var(--back-color);
+    position: fixed;
+    width: 100%;
+}
+.container-wrapper header nav .nav-container .center-nav{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 72px;   
+}
+.container-wrapper header nav .nav-container .center-nav .menu-button{
+    position: absolute;
+}
+.container-wrapper header nav .nav-container .menu-button .bar1,.bar2,.bar3{
+    background: var(--use-font-color);
+    width: 54px;
+    height: 2px;
+    margin: 6px 0;
+    transition: all .08s ease-in-out;
+}
+.container-wrapper header nav .nav-container .menu-button{
+    cursor: pointer;
+}
+.container-wrapper header nav .nav-container .logo{
+    width: 100%;
+    text-align: center;
+}
+.container-wrapper header nav .nav-container .logo h1 a{
+    font-size: 1.5em;
+    color: var(--use-font-color);
+    font-family: 'Times New Roman', Times, serif;
+}
+.container-wrapper header nav .nav-container .logo h1 a span{
+    background: rgba(71, 71, 68, 0.3);
+    padding: .5rem;
+}
+.container-wrapper header nav .nav-container .menu-button:hover .bar2{
+    margin: 0.57rem 0;
+}
+
+/*--------------------styling the side nav part-----------------*/
+
+.container-wrapper .side-nav{
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    top: -500px;
+    transition: all .8s ease-in-out;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/*----------add classlist to side nav to show/hide the side nav----------*/
+
+.container-wrapper .show-side-nav{
+    top: 0;
+    height: 100vh;
+}
+
+/*--------------------styling the side nav up part-----------------*/
+
+.container-wrapper .side-nav .close-row-wrapper{
+    width: 100%;
+    background: var(--back-color);
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    padding: .2rem 0;
+    height: 60px;
+}
+
+.container-wrapper .side-nav .close-row-wrapper .close-row .close-button{
+    width: 15%;
+    padding-top: 10px;
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row .close-button button{
+    font-weight: bold;
+    color: var(--side-nav-fcolor);
+    font-size: .95em;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row .close-button .close-btn svg{
+    width: 30px;
+    height: 30px;
+    fill: var(--side-nav-fcolor);
+    transition: all .15s ease-in-out;
+}
+/*--------------close button hover effect-------------*/
+
+.container-wrapper .side-nav:hover .close-row-wrapper .close-row .close-button .close-btn svg{
+    transform: rotate(90deg);
+    fill: var(--hover-effect-color);
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row .close-button .close-btn:hover svg{
+    transform: rotate(-180deg);
+    fill: var(--hover-effect-color);
+}
+.container-wrapper .side-nav:hover .close-row-wrapper .close-row .close-button .close-btn span{
+    color: var(--hover-effect-color);
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row .close-button .close-btn:hover span{
+    color: var(--hover-effect-color);
+}
+
+/*--------------------styling the side nav up part right side-----------------*/
+
+.container-wrapper .side-nav .close-row-wrapper .close-row .right-links .icons ul svg{
+    width: 20px;
+    height:20px;
+    fill:var(--side-nav-fcolor);
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row .right-links ul li a{
+    color: var(--side-nav-fcolor);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .9em;
+    letter-spacing: -1.5px;
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row .right-links{
+    display: flex;
+    width: 85%;
+    align-items: center;
+    justify-content: flex-end;
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row .right-links .links ul,
+.container-wrapper .side-nav .close-row-wrapper .close-row .right-links .icons ul{
+    display: flex;
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row .right-links ul li a{
+    margin-left: 1.3rem;
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row .right-links ul li a:hover{
+    color: var(--hover-effect-color);
+}
+.container-wrapper .side-nav .close-row-wrapper .close-row .right-links ul li a svg:hover{
+    fill: rgba(255, 255, 255, 0.8);
+}
+
+/*--------------------styling the side nav bottom part-----------------*/
+
+.container-wrapper .side-nav .menu-links-icons{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    background: var(--back-color);
+}
+.container-wrapper .side-nav .menu-links-icons .column{
+    width: 25%;
+    border: var(--side-nav-border);
+}
+.container-wrapper .side-nav .menu-links-icons .column:last-child{
+    border-right: none;
+}
+.container-wrapper .side-nav .menu-links-icons .column a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--side-nav-fcolor);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 2.2rem 0;
+    letter-spacing: -1px;
+}
+
+/*--------styling menu links icons-------------*/
+
+.container-wrapper .side-nav .menu-links-icons .column a li:last-child{
+    padding-top: 20px;
+    transition: all .2s ease-in-out;
+}
+.container-wrapper .side-nav .menu-links-icons .column a:hover li:last-child{
+    color: var(--hover-effect-color);
+}
+.container-wrapper .side-nav .menu-links-icons .column a li:first-child svg{
+    width: 200px;
+    height: 80px;
+    fill: #5c5857;
+    transition: all .5s ease-in-out;
+}
+.container-wrapper .side-nav .menu-links-icons .column a:hover li:first-child svg{
+    fill: var(--use-font-color);
+}
+
+/*-----------------responsive side nav-----------------------------*/
+
+@media screen and (max-width:625px) {
+    .container-wrapper .side-nav .menu-links-icons .column{
+        width: 50%;
+    }
+    .container-wrapper .side-nav .menu-links-icons{
+        order: 1;
+    }
+    .container-wrapper .side-nav .close-row-wrapper{
+        order: 2;
+    }
+    .container-wrapper .side-nav .close-row-wrapper .close-row .close-button{
+        display: none;
+    }
+    .container-wrapper .side-nav .close-row-wrapper .close-row .right-links{
+        width: 100%;
+        justify-content: center;
+    }
+    .container-wrapper header nav .nav-container{
+        z-index: 10000;
+    }
+    .container-wrapper .side-nav{
+        margin-top: 72px;
+    }
+    .container-wrapper .side-nav .close-row-wrapper .close-row .right-links ul li a{
+        font-size: .8em;
+    }
+    .container-wrapper .side-nav .close-row-wrapper .close-row .right-links .links ul li:first-child a{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width:446px){
+    .container-wrapper .side-nav .close-row-wrapper .close-row .right-links{
+        flex-wrap: wrap;
+    }
+    .container-wrapper .side-nav .close-row-wrapper .close-row .right-links ul li a{
+        font-size: .7em;
+    }
+    .container-wrapper header nav .nav-container .logo h1 a{
+        font-size: 1.2em;
+    }
+    .container-wrapper header nav .nav-container .menu-button .bar1,.bar2,.bar3{
+        width: 40px;
+        height: 1px;
+    }
+}
+@media screen and (max-width:380px){
+    .container-wrapper .side-nav .close-row-wrapper .close-row .right-links .icons ul li:first-child a{
+        margin-left: 0;
+    }
+}
